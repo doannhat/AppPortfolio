@@ -13,6 +13,9 @@ import android.widget.Button;
 import android.widget.ListView;
 import android.widget.Toast;
 
+
+import com.example.doannhat.nhatdoanappportfolio.adapter.AppButtonAdapter;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -52,24 +55,28 @@ public class MainActivity extends AppCompatActivity {
                 "MAKE YOUR APP MATERIAL",
                 "GO UBIQUITOUS",
                 "CAPSTONE"};
-            List<String> appList = new ArrayList<>(Arrays.asList(appArray));
+            ArrayList<String> appList = new ArrayList<>(Arrays.asList(appArray));
 
-            ArrayAdapter<String> arrayAdapter = new ArrayAdapter<>(getActivity(),
-                    R.layout.list_item_app, R.id.list_app_bttn, appList);
+//            ArrayAdapter<String> arrayAdapter = new ArrayAdapter<>(getActivity(),
+//                    R.layout.list_item_app, R.id.list_app_bttn, appList);
+
+            AppButtonAdapter appButtonAdapter = new AppButtonAdapter(appList, getContext());
+
             ListView listview = (ListView) rootView.findViewById(R.id.listView_apps);
-            listview.setAdapter(arrayAdapter);
+            listview.setAdapter(appButtonAdapter);
 
-            listview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-                public void onItemClick(AdapterView<?> parent, View view,
-                                        int position, long id) {
-                    String selectedApp = appArray[position];
-                    String displayString = String.format("This button will launch my " + selectedApp
-                            + " app!");
-                    Toast toast = Toast.makeText(getActivity().getApplicationContext(),
-                            displayString, Toast.LENGTH_SHORT);
-                    toast.show();
-                }
-            });
+
+//            listview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+//                public void onItemClick(AdapterView<?> parent, View view,
+//                                        int position, long id) {
+//                    String selectedApp = appArray[position];
+//                    String displayString = String.format("This drawable_button will launch my " + selectedApp
+//                            + " app!");
+//                    Toast toast = Toast.makeText(getActivity().getApplicationContext(),
+//                            displayString, Toast.LENGTH_SHORT);
+//                    toast.show();
+//                }
+//            });
 
             return rootView;
         }

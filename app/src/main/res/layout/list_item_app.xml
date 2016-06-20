@@ -1,14 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<TextView xmlns:android="http://schemas.android.com/apk/res/android"
+<Button xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
     android:layout_height="?android:attr/listPreferredItemHeight"
     android:gravity="center"
     android:layout_gravity="center"
-    android:minWidth="80dp"
-    android:minHeight="50dp"
+    android:minWidth="50dp"
     android:id="@+id/list_app_bttn"
-    android:background="@drawable/button"
+    android:background="@drawable/drawable_button"
     android:textColor="@color/colorWhite">
 
-</TextView>
+</Button>
